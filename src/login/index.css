@@ -12,3 +12,23 @@ body.kcBodyClass {
 .kcHeaderWrapperClass{
     @apply text-3xl font-bold underline;
 }
+input[type="checkbox"] {
+    position: relative; /* Position relative for the pseudo-element */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+input[type="checkbox"]:checked::before {
+    content: ''; /* Create a pseudo-element */
+    position: absolute; /* Position it relative to the checkbox */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Cover the entire checkbox */
+    height: 100%; /* Cover the entire checkbox */
+    background-color: teal; /* Change to your desired background color */
+    border-radius: 4px; /* Optional: round the corners */
+    z-index: -1; /* Place behind the checkbox */
+}
+
+input[type="checkbox"]:checked {
+    border-color: transparent; /* Optional: Remove border color when checked */
+}
