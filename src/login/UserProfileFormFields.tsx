@@ -27,7 +27,6 @@ export default function UserProfileFormFields(props: UserProfileFormFieldsProps<
         i18n,
         doMakeUserConfirmPassword
     });
-
     useEffect(() => {
         onIsFormSubmittableValueChange(isFormSubmittable);
     }, [isFormSubmittable]);
@@ -210,6 +209,7 @@ type InputFieldByTypeProps = {
 function InputFieldByType(props: InputFieldByTypeProps) {
     const { attribute, valueOrValues } = props;
 
+    const autoComplete = attribute.name === "password" ? "password" : 'new-password'
     switch (attribute.annotations.inputType) {
         case "textarea":
             return <TextareaTag {...props} />;
@@ -234,10 +234,7 @@ function InputFieldByType(props: InputFieldByTypeProps) {
 
             if (attribute.name === "password" || attribute.name === "password-confirm") {
                 return (
-                    // <PasswordWrapper kcClsx={props.kcClsx} i18n={props.i18n} passwordInputId={attribute.name}>
-                    //     {inputNode}
-                    // </PasswordWrapper>
-                    <PasswordInput name={attribute.name} />
+                    <PasswordInput name={attribute.name} autoComplete={autoComplete} />
                 );
             }
 

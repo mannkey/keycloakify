@@ -74,6 +74,7 @@ export default function Register(props: RegisterProps) {
                             disabled={!isFormSubmittable || (termsAcceptanceRequired && !areTermsAccepted)}
                             type="submit"
                             value={msgStr("doRegister")}
+                            name="register"
                         />
                     </div>
                 </div>

@@ -11,7 +11,6 @@ const PasswordInput = (props: IInput) => {
         <div className="relative">
             <Input
                 {...props}
-                name="password"
                 type={!showPassword ? "password" : "text"}
             />
             <span className="absolute top-1/2 right-3 transform -translate-y-1/2">
