@@ -14,7 +14,6 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
         displayInfo = false,
         displayMessage = true,
-        // displayRequiredFields = false,
         socialProvidersNode = null,
         infoNode = null,
         documentTitle,
