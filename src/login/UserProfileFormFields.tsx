@@ -209,7 +209,7 @@ export type InputFieldByTypeProps = {
 function InputFieldByType(props: InputFieldByTypeProps & { fieldIndex?: number | undefined }) {
     const { attribute, valueOrValues } = props;
 
-    const autoComplete = attribute.name === "password" ? "password" : 'new-password'
+    const passwordAutoComplete = attribute.name === "password" ? "password" : 'new-password'
     switch (attribute.annotations.inputType) {
         case "textarea":
             return <TextareaTag {...props} />;
@@ -234,7 +234,7 @@ function InputFieldByType(props: InputFieldByTypeProps & { fieldIndex?: number |
 
             if (attribute.name === "password" || attribute.name === "password-confirm") {
                 return (
-                    <PasswordInput name={attribute.name} autoComplete={autoComplete}
+                    <PasswordInput name={attribute.name} autoComplete={passwordAutoComplete}
                         onChange={event =>
                             props.dispatchFormAction({
                                 action: "update",
