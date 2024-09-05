@@ -122,7 +122,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                 <div className="relative">
                                     <PasswordInput
                                         tabIndex={3}
-                                        id="password"
+                                        name="password"
                                         autoComplete="current-password"
                                         aria-invalid={messagesPerField.existsError("username", "password")}
                                     />
